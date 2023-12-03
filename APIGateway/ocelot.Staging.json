@@ -1,0 +1,28 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/accounts/{customerId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "{staging-host}",
+          "Port": "{staging-port}"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/accounts/{customerId}",
+      "UpstreamHttpMethod": [ "POST", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/transactions/customer/{customerId}/account/{accountId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "{staging-host}",
+          "Port": "{staging-port}"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/transactions/customer/{customerId}/account/{accountId}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ]
+}
